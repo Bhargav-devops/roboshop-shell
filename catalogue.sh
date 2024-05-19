@@ -45,7 +45,7 @@ then
     useradd roboshop &>> $LogFile
     Validate $? "creating roboshop user "
 else
-    echo "user already exist $Y skipping $N"
+    echo -e "user already exist $Y skipping $N"
 fi
 mkdir -p /app &>> $LogFile
 Validate $? "creating app directory"
