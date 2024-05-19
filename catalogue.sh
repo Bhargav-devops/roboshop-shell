@@ -3,7 +3,7 @@
 ID=$(id -u)
 R="\e[31m"
 G="\e[32m"
-Y="\E[33m"
+Y="\e[33m"
 N="\e[0m"
 
 TimeStamp=$(date +%F-%H-%M-%S)
@@ -39,7 +39,7 @@ Validate $? "enable nodejs"
 dnf install nodejs -y &>> $LogFile
 Validate $? "installing nodejs"
 
-id roboshop
+id roboshop &>> $LogFile
 if [ $? -ne 0 ]
 then
     useradd roboshop &>> $LogFile
@@ -80,7 +80,7 @@ Validate $? "copying mongo repo"
 dnf install mongodb-org-shell -y &>> $LogFile
 Validate $? "copying mongo repo"
 
-mongo --host $Mongodb_Host </app/schema/catalogue.js
+mongo --host $Mongodb_Host </app/schema/catalogue.js &>> $LogFile
 Validate $? "loading catalogue data into mongodb"
 
 
