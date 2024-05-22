@@ -18,7 +18,7 @@ then
     echo -e " $2 $R failed $N "
     exit 1
 else
-    echo -e " $3 $G success $N "
+    echo -e " $2 $G success $N "
 fi
 }
 
@@ -37,7 +37,7 @@ Validate $? "diabled nodejs"
 dnf module enable nodejs:18 -y &>> $LogFile
 Validate $? "enable nojes 18 "
 
-dnf install nodejs -y
+dnf install nodejs -y &>> $LogFile
 Validate $? "install nojes 18 "
 
 id roboshop
