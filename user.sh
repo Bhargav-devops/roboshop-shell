@@ -82,7 +82,7 @@ dnf install mongodb-org-shell -y &>> $LogFile
 Validate $? "install mongodb client "
 
 mongo --host $Mongodb_Host </app/schema/user.js &>> $LogFile
-Validate $? "copied the user service "
+Validate $? "loading schema to mongodb"
 
 
 
