@@ -31,10 +31,10 @@ else
     echo -e " you are root user"
 fi
 
-dnf module disable nodejs -y $>> $LogFile
+dnf module disable nodejs -y &>> $LogFile
 Validate $? "diabled nodejs"
 
-dnf module enable nodejs:18 -y $>> $LogFile
+dnf module enable nodejs:18 -y &>> $LogFile
 Validate $? "enable nojes 18 "
 
 dnf install nodejs -y
@@ -48,11 +48,11 @@ then
 else 
     echo -e " user already $G created $N"
 fi
-mkdir -p /app $>> $LogFile
+mkdir -p /app &>> $LogFile
 Validate $? "created app directory  "
 
 
-curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip $>> $LogFile
+curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip &>> $LogFile
 Validate $? "Downloading the user application"
 
 cd /app 
@@ -60,10 +60,10 @@ cd /app
 unzip -o /tmp/user.zip &>> $LogFile
 Validate $? "Unzip the application"
 
-npm install $>> $LogFile
+npm install &>> $LogFile
 Validate $? "Installing Dependencies"
 
-cp /home/centos/roboshop-shell/user.service /etc/systemd/system/user.service $>> $LogFile
+cp /home/centos/roboshop-shell/user.service /etc/systemd/system/user.service &>> $LogFile
 Validate $? "copied the user service "
 
 systemctl daemon-reload &>> $LogFile
@@ -81,7 +81,7 @@ Validate $? "copying mongo repo"
 dnf install mongodb-org-shell -y &>> $LogFile
 Validate $? "install mongodb client "
 
-mongo --host $Mongodb_Host </app/schema/user.js
+mongo --host $Mongodb_Host </app/schema/user.js &>> $LogFile
 Validate $? "copied the user service "
 
 
