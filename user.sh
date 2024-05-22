@@ -63,7 +63,7 @@ Validate $? "Unzip the application"
 npm install &>> $LogFile
 Validate $? "Installing Dependencies"
 
-cp /home/centos/roboshop-shell/user.service /etc/systemd/system/user.service &>> $LogFile
+cp /home/centos/roboshop-shell/user.service /etc/systemd/system/user.service
 Validate $? "copied the user service "
 
 systemctl daemon-reload &>> $LogFile
