@@ -19,7 +19,7 @@ then
     exit 1
 else
     echo -e " $3 $G success $N "
-if
+fi
 }
 
 
