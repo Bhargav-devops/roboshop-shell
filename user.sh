@@ -8,7 +8,7 @@ N="\e[0m"
 
 TimeStamp=$(date +%F-%H-%M-%S)
 LogFile="/tmp/$0-$TimeStamp"
-Mongodb_Host=mongo.bhargavdevops.online
+Mongodb_Host=mongodb.bhargavdevops.online
 
 echo " Script starte executing at $TimeStamp " &>> $LogFile
 
