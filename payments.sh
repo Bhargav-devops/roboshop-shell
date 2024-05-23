@@ -28,7 +28,8 @@ else
     echo -e "you are root user"
 fi
 
-dnf install python36 gcc python3-devel -y
+dnf install python36 gcc python3-devel -y &>> $LogFile
+Validate $? "installing pyton 3.6"
 
 id roboshop &>> $LogFile
 if [ $? -ne 0 ]
@@ -54,7 +55,7 @@ Validate $? "unzip the payment app"
 pip3.6 install -r requirements.txt &>> $LogFile
 Validate $? "insatalling python dependencies"
 
-cp home/centos/roboshop-shell/payment.service /etc/systemd/system/payment.service  
+cp /home/centos/roboshop-shell/payment.service /etc/systemd/system/payment.service  
 Validate $? "copying the payment.service to etc"
 
 systemctl daemon-reload &>> $LogFile
