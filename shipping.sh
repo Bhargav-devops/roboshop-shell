@@ -49,7 +49,7 @@ Validate $? "Downloading shipping application"
 
 cd /app
 
-unzip /tmp/shipping.zip &>> $LogFile
+unzip -o /tmp/shipping.zip &>> $LogFile
 Validate $? "unzip shipping application"
 
 mvn clean package &>> $LogFile
