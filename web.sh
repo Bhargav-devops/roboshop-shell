@@ -48,7 +48,7 @@ Validate $? "Downloading web application"
 cd /usr/share/nginx/html
 Validate $? "change directory"
 
-unzip -o /tmp/web.zip
+unzip -o /tmp/web.zip &>> $LogFile
 Validate $? "unzip web applization"
 
 cp /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf 
