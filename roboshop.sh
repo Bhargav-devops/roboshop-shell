@@ -14,5 +14,5 @@ do
     else
         InstanceType="t2.micro"
     fi
-aws ec2 run-instances --image-id $AMI --instance-type $InstanceType --security-group-ids $SG_ID --tag-specifications "ResourceType=instance,Tags=[{Key=webbb,Value=$i}]"
+aws ec2 run-instances --image-id $AMI --instance-type $InstanceType --security-group-ids $SG_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" --query "Instances[0].PrivateIpAddress" --output text
 done
