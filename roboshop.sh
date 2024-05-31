@@ -29,11 +29,11 @@ echo " $i = $IP_Address"
         ,"Changes": [{
         "Action"              : "CREATE"
         ,"ResourceRecordSet"  : {
-            "Name"              : "$i.$DomainName"
+            "Name"              : "'$i'.'$DomainName'"
             ,"Type"             : "A"
             ,"TTL"              : 1
             ,"ResourceRecords"  : [{
-                "Value"         : "$IP_Address"
+                "Value"         : "'$IP_Address'"
             }]
         }
         }]
