@@ -22,7 +22,7 @@ IP_Address=$(aws ec2 run-instances --image-id $AMI --instance-type $InstanceType
 echo " $i = $IP_Address"
 #create route 53 records, make sure you delete existing record
     aws route53 change-resource-record-sets \
-    --hosted-zone-id 1234567890ABC \
+    --hosted-zone-id $ZoneID \
     --change-batch '
     {
         "Comment": "Testing creating a record set"
