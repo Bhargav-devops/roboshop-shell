@@ -2,7 +2,7 @@
 
 #aws ec2 run-instances --image-id ami-0f3c7d07486cad139 --instance-type t2.micro --security-group-ids sg-01d0fa686e2d4cfbc --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=i}]"
 
-AMI="ami-0f3c7d07486cad139"
+AMI="ami-0b4f379183e5706b9"
 SG_ID="sg-01d0fa686e2d4cfbc"
 ZoneID="Z0390089TIO0SFJPINO3"
 DomainName="bhargavdevops.online"
