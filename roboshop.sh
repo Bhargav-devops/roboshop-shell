@@ -27,7 +27,7 @@ echo " $i = $IP_Address"
     {
         "Comment": "Testing creating a record set"
         ,"Changes": [{
-        "Action"              : "CREATE"
+        "Action"              : "UPSERT"
         ,"ResourceRecordSet"  : {
             "Name"              : "'$i'.'$DomainName'"
             ,"Type"             : "A"
